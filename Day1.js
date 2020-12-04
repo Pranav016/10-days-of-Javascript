@@ -19,3 +19,25 @@ myName = "Pranav"; //updating existing var
 
 var yourName = prompt("What's your name?");
 alert("Welcome to my website " + yourName);
+
+
+
+//Strings
+
+"I have " + 10 + "apples."; //concatenation
+
+console.log(message.length); //length of string
+
+message.slice(0,14); //gives 0 to 13 characters
+
+message.toUpperCase(); //converts string to upper case
+
+
+var message = prompt("Enter your tweet");
+len = message.length;
+alert("You have written " + len + " characters and have " + (200-len) + "characters left.")
+
+
+
+var name = prompt("What is your name?");
+alert("Hi " + name.slice(0,1).toUpperCase() + name.slice(1,name.length).toLowerCase());
