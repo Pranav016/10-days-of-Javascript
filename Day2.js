@@ -14,3 +14,9 @@
 
 // Functions/ Methods-
 
+// Syntax-
+// function functionName(parameters)
+// {
+//      some code
+//      return statement;
+// }
