@@ -18,6 +18,13 @@ var elmnt = document.getElementById("p1");
 elmnt.remove();
 
 
+//Removing or replacing a child
+var parent = document.getElementById("div1");
+var child = document.getElementById("p1");
+parent.removeChild(child);
+// parent.replaceChild(para, child);
+
+
 
 //HTML collections
 var myCollection = document.getElementsByTagName("p");
@@ -28,10 +35,3 @@ document.getElementById("demo").innerHTML = myCollection.length;
 //NodeList
 var myNodelist = document.querySelectorAll("p");
 document.getElementById("demo").innerHTML = myNodelist.length;
-
-
-//Removing or replacing a child
-var parent = document.getElementById("div1");
-var child = document.getElementById("p1");
-parent.removeChild(child);
-// parent.replaceChild(para, child);

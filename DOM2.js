@@ -21,11 +21,9 @@ document.getElementById("myBtn").onclick = displayDate;
 //4. The onmouseover and onmouseout events can be used to trigger a function when the user mouses over, or out of, an HTML element:
 
 
-{/* <div onmouseover="mOver(this)" onmouseout="mOut(this)" 
-style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
-Mouse Over Me</div>
+{/* <div onmouseover="mOver(this)" onmouseout="mOut(this)">
+Mouse Over Me</div> */}
 
-<script>
 function mOver(obj) {
   obj.innerHTML = "Thank You"
 }
@@ -33,7 +31,6 @@ function mOver(obj) {
 function mOut(obj) {
   obj.innerHTML = "Mouse Over Me"
 }
-</script> */}
 
 
 

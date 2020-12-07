@@ -15,7 +15,8 @@
 var x = document.getElementById("intro");
 var x = document.getElementsByTagName("p");
 var x = document.getElementsByClassName("intro");
-var x = document.querySelectorAll("p.intro");  //works like a CSS selector
+var x = document.querySelector("p.intro");
+var x = document.querySelectorAll("p.intro");  //works like a CSS selector //returns a nodeList
 // We can also find html elements using some predefined HTML collections
 
 
