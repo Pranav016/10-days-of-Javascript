@@ -40,7 +40,7 @@ $("button").click(function(){
 // For jQuery animations- https://www.w3schools.com/jquery/jquery_animate.asp
 
 
-//6. jQuery Callback Functions
+//5. jQuery Callback Functions
 // A callback function is executed after the current effect is 100% finished.
 $("button").click(function(){
     $("p").hide("slow", function(){
@@ -49,5 +49,5 @@ $("button").click(function(){
   });
 
 
-//7. Chaining
+//6. Chaining
 //https://www.w3schools.com/jquery/jquery_chaining.asp
