@@ -8,11 +8,11 @@ mongoose.connect('mongodb://localhost:27017/fruitsDB', {useNewUrlParser: true, u
 //     review: String,
 // })
 
-//validated schema
+// validated schema
 const fruitSchema= new mongoose.Schema({
     name: {
         type: String,
-        // required: [true, "Mention a fruit"],
+        required: [true, "Mention a fruit"],
     },
     rating: {
         type: Number,
@@ -26,8 +26,9 @@ const Fruit = mongoose.model("Fruit", fruitSchema); //forming a new collection i
 // while creating the colection, we always give a singular name to our collection coz mongoose makes it plural for us
 
 const fruit = new Fruit({
-    rating: 8,
-    review: "Yummy",
+    name: "Grapes",
+    rating: 9.5,
+    review: "Tasty",
 });
 
 // Fruit.updateOne({_id: "5fea546a9a2a7c49dc9e1b6d"}, {name: "Kiwi"}, function(err){
@@ -50,24 +51,24 @@ const fruit = new Fruit({
 // });
 
 
-Fruit.deleteMany({name: /Apple/}, function(err){
-    if(err){
-        console.log(err);
-    }
-    else{
-        console.log("Deleted successfully!");
-    }
-});
-
-
-// fruit.save().then(function (err){
+// Fruit.deleteMany({name: /Pineapple/}, function(err){
 //     if(err){
 //         console.log(err);
 //     }
 //     else{
-//         console.log("Values added sucessfully")
+//         console.log("Deleted successfully!");
 //     }
 // });
+
+
+fruit.save().then(function (err){
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log("Values added sucessfully")
+    }
+});
 
 // const apple = new Fruit({
 //     name: "Apple",
@@ -109,19 +110,48 @@ Fruit.deleteMany({name: /Apple/}, function(err){
 // });
 
 
+
+
+// const personSchema = new mongoose.Schema({
+//     name: String,
+//     age: Number,
+// });
+
+//Creating a relationship schema for person
 const personSchema = new mongoose.Schema({
     name: String,
     age: Number,
+    favouriteFruit: fruitSchema,
 });
+
 
 const Person = mongoose.model("Person", personSchema); //name of the collection and schema are passed as arg.
 
+// const person = new Person({
+//     name: "Pranav",
+//     age: "20",
+// });
+
 const person = new Person({
-    name: "Pranav",
-    age: "20",
+    name: "Mary",
+    age: "18",
+    favouriteFruit: {
+        name: "Grapes",
+        rating: 9.5,
+        review: "Tasty",
+    }
 });
 
-// person.save().then(function (){
-//     console.log("Person successfully added!");
+// Person.deleteMany({name: /Momo/}, function(err){
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log("Deleted successfully!");
+//     }
 // });
+
+person.save().then(function (){
+    console.log("Person successfully added!");
+});
 
