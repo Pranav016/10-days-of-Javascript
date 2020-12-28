@@ -12,7 +12,7 @@ mongoose.connect('mongodb://localhost:27017/fruitsDB', {useNewUrlParser: true, u
 const fruitSchema= new mongoose.Schema({
     name: {
         type: String,
-        required: [true, "Mention a fruit"],
+        // required: [true, "Mention a fruit"],
     },
     rating: {
         type: Number,
@@ -26,19 +26,48 @@ const Fruit = mongoose.model("Fruit", fruitSchema); //forming a new collection i
 // while creating the colection, we always give a singular name to our collection coz mongoose makes it plural for us
 
 const fruit = new Fruit({
-    name: "Dragon Fruit",
     rating: 8,
     review: "Yummy",
 });
 
-fruit.save().then(function (err){
+// Fruit.updateOne({_id: "5fea546a9a2a7c49dc9e1b6d"}, {name: "Kiwi"}, function(err){
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log("Updated Successfully!");
+//     }
+// });
+
+
+// Fruit.deleteOne({_id: "5fea2e4783e5965230835d73"}, function(err){
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log("Deleted successfully!");
+//     }
+// });
+
+
+Fruit.deleteMany({name: /Apple/}, function(err){
     if(err){
         console.log(err);
     }
     else{
-        console.log("Values added sucessfully")
+        console.log("Deleted successfully!");
     }
 });
+
+
+// fruit.save().then(function (err){
+//     if(err){
+//         console.log(err);
+//     }
+//     else{
+//         console.log("Values added sucessfully")
+//     }
+// });
 
 // const apple = new Fruit({
 //     name: "Apple",
