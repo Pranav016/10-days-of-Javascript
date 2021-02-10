@@ -1,0 +1,1 @@
+var isEven = [2, 4, 6, 8].every((element) => element%2 === 0); //no return statement required in this case
