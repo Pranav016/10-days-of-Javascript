@@ -3,13 +3,28 @@ const PORT = 8000;
 const fs = require('fs'); //module to interact with the file system
 
 function requestHandler(req, res){
-    res.writeHead(200, {'content-type': 'text/html'});
+    res.writeHead(200, {'content-type': 'text/html'}); //headers are important to render html
 
-    fs.readFile('./index.html', function(err, data){ //asynchronous file reading
+    let filePath;
+
+    switch(req.url){
+        case '/':
+            filePath = "./index.html";
+            break;
+        case '/profile':
+            filePath = "./profile.html";
+            break;
+        default:
+            filePath = "./404.html";
+            break;
+    }
+
+    fs.readFile(filePath, function(err, data){ //asynchronous file reading
         if(err){
             console.log(err);
             return res.end("Error!");
         }
+        
         return res.end(data);
     });
 }
