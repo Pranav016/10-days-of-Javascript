@@ -55,12 +55,11 @@ var hello = function () {..} //Gives error
 var hello = () => {..} //Gives error
 ```
 
-### Block Scope-
+### [Block Scope](https://www.w3schools.com/js/js_let.asp)-
 * A block scope is the area within if, switch conditions or for and while loops or any braces{}. 
 * `const` and `let` keywords allow developers to declare variables in the block scope, which means those variables exist only within the corresponding block.
 * Re-declaring a variable of `let` or `const` is not allowed whereas for `var` it is allowed.
 * If we use `var` to define a variable in a loop, then that variable is defined in the global context and can be accessed anywhere.
-To know more about use of variables in scopes and shadowing within blocks, refer to this [documentation](https://www.w3schools.com/js/js_let.asp)
 
 ##### Shadowing-
 Example of shadowing-
@@ -72,6 +71,9 @@ var a = 10;
 console.log(a); //here value of a will be 20 since var always defines in the global scope
 ```
 
+### [Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)-
+* A function bundled together with its lexical scope is called as a closure.
+* Imp Point: Inside a closure, always reference to a variable is stored.
 <hr/>
 
 ## Environment Setup -
