@@ -1,3 +1,49 @@
+# JavaScript Insights
+1. JavaScript is a synchronous, single threaded langauage.
+1. Everything in javascript is executed inside an **execution context**. It has two parts
+    * Variable Environment (Memory Component) - Stores the variables, functions etc.
+    * Thread of Execution - Executes the code line by line. (JS is synchronous and single threaded)
+1. JavaScript has a **call stack** like many other languages. It maintains order of execution of the execution contexts.
+1. Before executing any code, a **Global Execution Context** is pushed inside the call stack and stays there untill the whole code is executed.
+
+### Hoisting
+* Hoisting is JavaScript's default behavior of moving all declarations to the top of the current scope (to the top of the current script or the current function).
+* In JavaScript, Declarations are Hoisted, Initializations are Not Hoisted.
+Example-
+This code works because declaration is hoisted
+```
+    x = 5; // Assign 5 to x
+
+    elem = document.getElementById("demo"); // Find an element
+    elem.innerHTML = x;                     // Display x in the element
+
+    var x; // Declare x
+```
+
+This does not work because initialization is not hoisted. It does not give error but we get `undefined` in the console.
+```
+    elem = document.getElementById("demo"); // Find an element
+    elem.innerHTML = x;                     // Display x in the element
+
+    var x = 5; // Initialize x
+```
+
+##### The let and const Keywords
+* Variables defined with `let` and `const` are hoisted to the top of the block, but not initialized.
+* Meaning: The block of code is aware of the variable, but it cannot be used until it has been declared.
+* Using a `let` variable before it is declared will result in a **ReferenceError**.
+    * The variable is in a "temporal dead zone" from the start of the block until it is declared.
+* Using a `const` variable before it is declared, is a syntax errror, so the code will simply not run.
+
+#### Functions in hoisting-
+```
+console.log(hello);
+function hello () {..} //works fine 
+var hello = function () {..} //Gives error
+var hello = () => {..} //Gives error
+```
+<hr/>
+
 # 10-days-of-Javascript
 
 This is my take on the 30 days of JavaScript challenge.
